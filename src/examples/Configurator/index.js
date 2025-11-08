@@ -1,17 +1,4 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
+//codeमित्र
 
 import { useState, useEffect } from "react";
 
@@ -29,15 +16,12 @@ import Icon from "@mui/material/Icon";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
-// Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
 // Custom styles for the Configurator
 import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
-
-// Material Dashboard 2 React context
 import {
   useMaterialUIController,
   setOpenConfigurator,
@@ -138,7 +122,7 @@ function Configurator() {
         px={3}
       >
         <MDBox>
-          <MDTypography variant="h5">Material UI Configurator</MDTypography>
+          <MDTypography variant="h5">Codeमित्र</MDTypography>
           <MDTypography variant="body2" color="text">
             See our dashboard options.
           </MDTypography>
@@ -288,57 +272,28 @@ function Configurator() {
         <MDBox mt={3} mb={2}>
           <MDButton
             component={Link}
-            href="https://www.creative-tim.com/learning-lab/react/quick-start/material-dashboard/"
+            href="/"
             target="_blank"
             rel="noreferrer"
             color={darkMode ? "light" : "dark"}
             variant="outlined"
             fullWidth
           >
-            view documentation
+            view Codeमित्र
           </MDButton>
         </MDBox>
         <MDBox display="flex" justifyContent="center">
           <GitHubButton
-            href="https://github.com/creativetimofficial/material-dashboard-react"
+            href="https://github.com/codemitrahub"
             data-icon="octicon-star"
             data-size="large"
             data-show-count="true"
-            aria-label="Star creativetimofficial/material-dashboard-react on GitHub"
+            aria-label="Star Codeमित्र on GitHub"
           >
             Star
           </GitHubButton>
         </MDBox>
-        <MDBox mt={2} textAlign="center">
-          <MDBox mb={0.5}>
-            <MDTypography variant="h6">Thank you for sharing!</MDTypography>
-          </MDBox>
-
-          <MDBox display="flex" justifyContent="center">
-            <MDBox mr={1.5}>
-              <MDButton
-                component={Link}
-                href="//twitter.com/intent/tweet?text=Check%20Material%20Dashboard%20React%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23react%20%mui&url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fmaterial-dashboard-react"
-                target="_blank"
-                rel="noreferrer"
-                color="dark"
-              >
-                <TwitterIcon />
-                &nbsp; Tweet
-              </MDButton>
-            </MDBox>
-            <MDButton
-              component={Link}
-              href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-dashboard-react"
-              target="_blank"
-              rel="noreferrer"
-              color="dark"
-            >
-              <FacebookIcon />
-              &nbsp; Share
-            </MDButton>
-          </MDBox>
-        </MDBox>
+        <MDBox mt={2} textAlign="center"></MDBox>
       </MDBox>
     </ConfiguratorRoot>
   );

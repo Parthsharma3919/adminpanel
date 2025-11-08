@@ -1,17 +1,4 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
+//codeमित्र
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
@@ -20,11 +7,8 @@ import PropTypes from "prop-types";
 import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
-// Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-
-// Material Dashboard 2 React base styles
 import typography from "assets/theme/base/typography";
 
 function Footer({ company, links }) {
@@ -99,12 +83,12 @@ function Footer({ company, links }) {
 
 // Setting default values for the props of Footer
 Footer.defaultProps = {
-  company: { href: "https://www.creative-tim.com/", name: "Creative Tim" },
+  company: { href: "https://www.codeमित्र.com/", name: "codeमित्र" },
   links: [
-    { href: "https://www.creative-tim.com/", name: "Creative Tim" },
-    { href: "https://www.creative-tim.com/presentation", name: "About Us" },
-    { href: "https://www.creative-tim.com/blog", name: "Blog" },
-    { href: "https://www.creative-tim.com/license", name: "License" },
+    { href: "https://www.codeमित्र.com/", name: "codeमित्र" },
+    { href: "https://www.codeमित्र.com/presentation", name: "About Us" },
+    { href: "https://www.codeमित्र.com/blog", name: "Blog" },
+    { href: "https://www.codeमित्र.com/license", name: "License" },
   ],
 };
 
