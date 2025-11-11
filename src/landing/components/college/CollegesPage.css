@@ -1,0 +1,408 @@
+/* ===== Base Section ===== */
+:root{
+  --sunrise:#FF6A00;   /* orange */
+  --peach:#FFC36A;     /* warm peach */
+  --leaf:#16A34A;      /* leaf green */
+  --leaf-dark:#0E7C36; /* darker green */
+  --plum:#4B2E83;      /* deep purple (subtle accents) */
+  --ink:#0f172a;
+}
+
+
+.colleges {
+  background: #f9fbff;
+  padding: 80px 0 100px;
+  color: #1e293b;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ===== Headings ===== */
+.colg-title {
+  font-weight: 800;
+  font-size: clamp(28px, 4.5vw, 40px);
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.colg-sub {
+  color: #64748b;
+  font-size: 16px;
+  max-width: 780px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #2764ff 0%, #003bff 100%);
+ 
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Feature Cards Grid ===== */
+.feat-card {
+  border: 1px solid #1fc448;
+  border-radius: 14px;
+  background: #fff;
+  padding: 18px 20px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  min-height: 120px;
+  position: relative;
+}
+
+/* Hover only active cards */
+.feat-card:not(.feat-disabled):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+/* ===== Feature States ===== */
+.feat-live {
+  background: #8aca9a;
+  border-color: #ccefd7;
+}
+
+.feat-soon {
+  background: #f9fafc;
+  border-color: #e5e9f2;
+  opacity: 0.75;
+  pointer-events: none; /* disables hover & clicks */
+  filter: grayscale(0.2);
+  cursor: not-allowed;
+}
+
+/* ===== Feature Content ===== */
+.feat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  background: #eef3ff;
+  color: #2353ff;
+  flex-shrink: 0;
+}
+
+.feat-title {
+  font-weight: 700;
+  font-size: 15.8px;
+  color: #111827;
+}
+
+.feat-desc {
+  color: #5b6474;
+  font-size: 14.5px;
+  line-height: 1.65;
+  margin-top: 3px;
+}
+
+/* ===== Coming Soon Chip (Right Aligned) ===== */
+.chip-soon {
+  background: #fff6cc;
+  color: #7c6500;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid #fce58f;
+  position: absolute;
+  top: 14px;
+  right: 16px;
+}
+
+/* ===== Partnership Card ===== */
+
+.partner-card {
+  background: #ffffff;
+  border: 1px solid #edf0f7;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.08);
+}
+.benefits li {
+  padding: 10px 0;
+  border-bottom: 1px dashed #eef1f6;
+  color: #18222f;
+}
+.benefits li:last-child { border-bottom: 0; }
+
+
+/* ===== CTA Box (Blue Bottom Card) ===== */
+.cta-box {
+  background: linear-gradient(180deg, #15ff8e 0%, #0aea0a 100%);
+  border-radius: 16px;
+  padding: 22px 20px;
+  color: #ffffff;
+  text-align: left;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.1);
+}
+
+.cta-box h5 {
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.cta-box p {
+  color: #e3e8ff;
+  font-size: 14.5px;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.cta-ghost-btn {
+  display: block;
+  text-align: center;
+  background: #fff;
+  color: #0a49ea;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.cta-ghost-btn:hover {
+  background: #f5f7ff;
+  transform: translateY(-2px);
+}
+
+/* ===== Stats Band ===== */
+.stats-band {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+  border: 1px solid #eef2fa;
+  margin: 60px auto 0;
+  max-width: 1100px;
+}
+
+.stat-cell {
+  padding: 28px 20px;
+}
+
+.stat-value {
+  font-weight: 800;
+  font-size: clamp(24px, 3.5vw, 34px);
+  color: #1a4bff;
+  margin-bottom: 6px;
+}
+
+.stat-top {
+  font-weight: 700;
+  color: #111827;
+  font-size: 15px;
+}
+
+.stat-bottom {
+  color: #64748b;
+  font-size: 13.5px;
+}
+
+/* ===== Integration Section ===== */
+.colleges h3 {
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 70px;
+}
+
+.integration-sub {
+  color: #5e687a;
+  font-size: 15px;
+  max-width: 780px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+
+.chip-pill {
+  background: #fff;
+  border: 1px solid #e5e9f2;
+  border-radius: 999px;
+  padding: 10px 18px;
+  color: #0f172a;
+  font-weight: 500;
+  box-shadow: 0 5px 14px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s ease;
+}
+
+.chip-pill:hover {
+  background: #f6f8ff;
+  color: #155dff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+  .partner-card {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .feat-card {
+    min-height: auto;
+  }
+
+  .cta-box {
+    text-align: center;
+  }
+
+  .cta-ghost-btn {
+    width: 100%;
+  }
+
+  .stats-band {
+    border-radius: 14px;
+  }
+}
+
+
+/* ---------- Partnership card ---------- */
+.partner-card{
+  border: 1px solid #F0E6DA;
+  box-shadow: 0 12px 28px rgba(79,45,0,.06);
+  background: #ffffff;
+}
+.partner-card h4{ color:#111827; }
+
+/* Benefits list: aligned & pro check badge */
+.benefits{
+  list-style:none; margin:0; padding:0;
+}
+.benefits li{
+  position:relative;
+  display:flex; align-items:flex-start;
+  gap:10px;
+  padding:12px 0 12px 40px;
+  border-bottom:1px dashed #f2e8dd;
+  color:#18222f;
+  line-height:1.45;
+}
+
+/* Equal height cards + safe text limits */
+:root{
+  --feat-card-h: 160px;    
+  --feat-pad: 18px 20px;
+}
+
+/* Make columns stretch and card fill */
+.col-lg-7 .col-sm-6 { display: flex; }
+.feat-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+  width: 100%;
+  height: var(--feat-card-h);      
+  padding: var(--feat-pad);
+  overflow: hidden;
+}
+
+/* Title row stays single-line */
+.feat-card .d-flex{ flex: 0 0 auto; min-height: 34px; }
+.feat-title{
+  font-weight: 700;
+  font-size: 16px;                   
+  line-height: 1.2;
+  white-space: nowrap;                 
+  overflow: hidden;
+  text-overflow: ellipsis;            
+}
+
+/* Description clamps to 2 lines to keep height consistent */
+.feat-desc{
+  flex: 1 1 auto;
+  font-size: 14px;                 
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.feat-icon{
+  width: 36px; height: 36px;
+  flex: 0 0 36px;
+}
+
+/* Mobile can allow a hair more room if you want */
+@media (max-width: 576px){
+  :root{ --feat-card-h: 176px; }
+}
+
+.benefits li:last-child{ border-bottom:0; }
+.benefits li::before{
+  content:"";
+  position:absolute; left:0; top:50%;
+  transform:translateY(-50%);
+  width:22px; height:22px; border-radius:999px;
+  background: var(--leaf);
+  box-shadow:0 2px 6px rgba(22,163,74,.22);
+  -webkit-mask: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'>\
+  <polyline points='20 6 9 17 4 12'/></svg>") center/70% 70% no-repeat;
+          mask: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'>\
+  <polyline points='20 6 9 17 4 12'/></svg>") center/70% 70% no-repeat;
+}
+
+/* CTA box keeps the brand gradient */
+.cta-box{
+  background: linear-gradient(90deg, var(--sunrise) 0%, #FF8A3D 55%, var(--peach) 100%);
+  color:#fff; border-radius:16px;
+  box-shadow:0 10px 26px rgba(255,106,0,.25);
+}
+.cta-box h5{ color:#fff; }
+.cta-box p{ color:#FFF4E8; }
+
+/* CTA button – white pill with brand hover, same structure */
+.cta-ghost-btn{
+  background:#fff; color: var(--sunrise);
+  border:1.5px solid transparent;
+  border-radius:10px;
+  padding:12px 16px; font-weight:700;
+  box-shadow:0 6px 16px rgba(0,0,0,.06);
+  transition:.22s ease;
+  text-decoration:none; display:block; text-align:center;
+}
+.cta-ghost-btn:hover{
+  background:#F3FFF7;
+  color: var(--leaf-dark);
+  border-color: rgba(22,163,74,.6);
+  transform: translateY(-2px);
+}
+
+/* ---------- Stats band & tags ---------- */
+.stats-band{
+  border:1px solid #F4E7D8;
+  box-shadow:0 10px 26px rgba(79,45,0,.05);
+  background:#fff;
+}
+.stat-value{ color: var(--sunrise); }
+.stat-top{ color:#101827; }
+.stat-bottom{ color:#64748b; }
+
+.chip-pill{
+  background:#fff; border:1px solid #f1e4d6; color:#111827;
+  border-radius:999px; padding:10px 18px;
+  box-shadow:0 5px 14px rgba(15,23,42,.05);
+  transition:.22s ease;
+}
+.chip-pill:hover{
+  background:#F0FFF5;
+  color: var(--leaf-dark);
+  border-color:#cdeed7;
+  box-shadow:0 6px 18px rgba(22,163,74,.12);
+}
+
+/* Responsiveness stays the same, just keep minor polish */
+@media (max-width:991px){
+  .partner-card{ margin-top:30px; }
+}
+@media (max-width:576px){
+  .feat-card{ min-height:auto; }
+  .cta-box{ text-align:center; }
+  .cta-ghost-btn{ width:100%; }
+  .stats-band{ border-radius:14px; }
+}
+

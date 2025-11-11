@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+/* === Animated star background setup === */
+.transform-cta {
+  position: relative;
+  overflow: hidden;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Stars layers --- */
+#stars, #stars2, #stars3 {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: transparent;
+  z-index: 0;
+}
+
+#stars:after, #stars2:after, #stars3:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: inherit;
+  height: inherit;
+}
+
+/* small stars */
+#stars {
+  width: 1px; height: 1px;
+  box-shadow: 400px 1200px #FFF, 1300px 600px #FFF, 800px 1600px #FFF, 300px 300px #FFF, 1800px 1300px #FFF;
+  animation: animStar 50s linear infinite;
+}
+#stars:after { box-shadow: inherit; }
+
+/* medium stars */
+#stars2 {
+  width: 2px; height: 2px;
+  box-shadow: 900px 600px #FFF, 1600px 1500px #FFF, 200px 1800px #FFF, 1200px 400px #FFF;
+  animation: animStar 100s linear infinite;
+}
+#stars2:after { box-shadow: inherit; }
+
+/* big stars */
+#stars3 {
+  width: 3px; height: 3px;
+  box-shadow: 400px 700px #FFF, 1000px 1200px #FFF, 1300px 300px #FFF;
+  animation: animStar 150s linear infinite;
+}
+#stars3:after { box-shadow: inherit; }
+
+@keyframes animStar {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-2000px); }
+}
+
+/* --- Content --- */
+.tcta-content {
+  position: relative;
+  z-index: 10;
+  padding: 80px 20px 100px;
+}
+
+.tcta-title {
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.text-fade {
+  background: linear-gradient(90deg, #a5c9ff 0%, #5b8dff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tcta-sub {
+  color: #cbd6f6;
+  max-width: 850px;
+  margin: 0 auto 40px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* === Glassy trust panel === */
+.trust-panel {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  max-width: 980px;
+  margin: 0 auto 36px;
+  padding: 32px 24px;
+  box-shadow: 0 16px 38px rgba(7, 20, 60, 0.35);
+}
+
+.trust-heading {
+  font-weight: 700;
+  color: #f2f6ff;
+  margin-bottom: 20px;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.trust-icon {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.trust-text {
+  color: #d7e4ff;
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+/* Divider */
+.tcta-divider {
+  height: 1px;
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto 22px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+/* Help text */
+.tcta-help {
+  color: #c7d6ff;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+/* Buttons */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+
+.btn-primary, .btn-ghost {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.25s all ease;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.5);
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .trust-grid { gap: 14px; }
+  .trust-item { gap: 6px; }
+  .trust-icon { width: 36px; height: 36px; font-size: 18px; }
+  .tcta-content { padding: 60px 16px 80px; }
+}
+
+/* ===== VS Foundation theme overrides (keep layout as-is) ===== */
+
+/* Headline gradient → sunrise orange → peach */
+.text-fade{
+  background: linear-gradient(90deg, #FF6A00 0%, #FF8A3D 55%, #FFC36A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Slightly warmer subtext for the dark sky */
+.tcta-sub{
+  color: #FFE7D1; /* warm peach on dark background */
+}
+
+/* Divider uses orange glow */
+.tcta-divider{
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,106,0,.75),
+    transparent
+  );
+  box-shadow: 0 0 18px rgba(255,106,0,.35);
+}
+
+/* Primary button → sunrise gradient */
+.btn-primary{
+  background: linear-gradient(90deg, #FF6A00 0%, #FF8A3D 55%, #FFC36A 100%);
+  color:#fff;
+  box-shadow: 0 12px 26px rgba(255,106,0,.40);
+  border: none;
+}
+.btn-primary:hover{
+  background: linear-gradient(90deg, #E25400 0%, #FF6A00 60%, #FF9547 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(255,106,0,.50);
+}
+.btn-primary:focus-visible{
+  outline: 2px solid #FFC36A;
+  outline-offset: 2px;
+}
+
+/* Secondary (ghost) button → leaf-green outline */
+.btn-ghost{
+  color: #CFF6DA;
+  border: 1.5px solid rgba(22,163,74,.8); /* leaf */
+  background: transparent;
+}
+.btn-ghost:hover{
+  background: rgba(22,163,74,.14);
+  color: #E8FFF0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(22,163,74,.18);
+}
+.btn-ghost:focus-visible{
+  outline: 2px solid #16A34A;
+  outline-offset: 2px;
+}

@@ -1,0 +1,119 @@
+/* Section */
+.features {
+  background: #fafbff;
+  padding: 84px 0;
+}
+
+/* Heading */
+.features-title {
+  font-weight: 800;
+  font-size: clamp(26px, 4.2vw, 42px);
+  color: #111317;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+.features-sub {
+  color: #5f6573;
+  max-width: 760px;
+  margin: 0 auto 40px;
+  font-size: clamp(14px, 1.8vw, 16px);
+}
+
+/* Card */
+.feature-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e8edf7;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 10px;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: #dbe6ff;
+  box-shadow: 0 16px 36px rgba(16, 24, 40, 0.09);
+}
+
+/* soft sheen on hover */
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(0, 64, 255, 0.04), transparent 60%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+.feature-card:hover::after { opacity: 1; }
+
+/* Icon */
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  color: #224cff;
+  background: #f3f6ff;
+  box-shadow: inset 0 0 0 1px rgba(34, 76, 255, 0.08);
+  transition: transform .25s ease, background .25s ease;
+}
+.feature-card:hover .feature-icon {
+  transform: scale(1.06);
+  background: #ecf1ff;
+}
+
+/* Badge (top-right like screenshot) */
+.feature-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-transform: none;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.05);
+}
+.badge-success { background: #e9f9ee; color: #198f4a; }
+.badge-info    { background: #e8f0ff; color: #2a57ff; }
+.badge-purple  { background: #f2e9ff; color: #7a3fe4; }
+
+/* Text */
+.feature-title {
+  font-size: clamp(16px, 2.3vw, 18px);
+  font-weight: 800;
+  color: #121826;
+  margin: 14px 0 6px;
+}
+.feature-desc {
+  color: #596074;
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Grid spacing uses Bootstrap g-4; tweak for tiny screens */
+@media (max-width: 991.98px) {
+  .features { padding: 64px 0 72px; }
+  .feature-card { min-height: 200px; padding: 22px; }
+}
+@media (max-width: 575.98px) {
+  .feature-card { padding: 20px; border-radius: 16px; }
+  .feature-badge { top: 14px; right: 14px; }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .feature-card,
+  .feature-card::after,
+  .feature-icon { transition: none; }
+}

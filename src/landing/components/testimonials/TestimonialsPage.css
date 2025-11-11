@@ -1,0 +1,208 @@
+/* ===== Base ===== */
+.tpage {
+  --bg: #f6f9ff;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --card: #ffffff;
+  --border: #e8eef8;
+  --shadow: 0 10px 24px rgba(15,23,42,.08);
+  --blue: #1f5aff;
+  --blue-ink: #1a4bff;
+  --pill-shadow: 0 10px 22px rgba(31,90,255,.32);
+
+  background: var(--bg);
+  color: var(--ink);
+  padding: 68px 0 96px;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== Heading ===== */
+.tp-title{
+  font-weight: 900;
+  font-size: clamp(28px,4.6vw,46px);
+  line-height: 1.06;
+  text-align: center;
+  letter-spacing: .2px;
+  margin-bottom: 10px;
+}
+.tp-grad{
+  background: linear-gradient(90deg,#FF7414 0%,#FF7414 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.tp-sub{
+  text-align:center;
+  color: var(--muted);
+  max-width: 860px;
+  margin: 0 auto 28px;
+  font-size: 16px;
+}
+
+/* ===== Stats row ===== */
+.tp-stats{ margin: 12px 0 28px; }
+.tp-stat-card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.tp-stat-value{
+  color: var(--blue-ink);
+  font-weight: 900;
+  font-size: clamp(22px,3.4vw,34px);
+  margin-bottom: 6px;
+  letter-spacing: .2px;
+}
+.tp-stat-label{ color:#1f2937; }
+
+/* ===== Segmented filter pills (one-piece capsule) ===== */
+.tp-pills{
+  width: fit-content;
+  margin: 8px auto 26px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(15,23,42,.06);
+  padding: 6px;
+  display: flex; gap: 6px;
+}
+.tp-pill{
+  border: 0;
+  background: transparent;
+  color: #1f2937;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 999px;
+  transition: transform .18s ease, background .18s ease, color .18s ease;
+  cursor: pointer;
+}
+.tp-pill:hover{ transform: translateY(-1px); }
+.tp-pill.active{
+  background: var(--blue);
+  color: #a59494;
+  box-shadow: var(--pill-shadow);
+}
+
+/* ===== Testimonial card ===== */
+.tp-card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.tp-stars{
+  color: #ffb300;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+.tp-quote{
+  color:#111827;
+  font-size: 15.8px;
+  line-height: 1.85;
+  font-style: italic;
+  margin: 0;
+}
+
+/* User row */
+.tp-user{
+  margin-top: 6px;
+  display:flex; align-items:center; gap:12px;
+}
+.tp-avatar{
+  width: 46px; height: 46px; border-radius: 50%;
+  display:grid; place-items:center;
+  font-size: 22px;
+  background:#eef3ff; color:#2757ff;
+  box-shadow: inset 0 0 0 1px #dfe7ff;
+  flex-shrink:0;
+}
+.tp-user-meta{ line-height:1.18; }
+.tp-name{ font-weight: 800; color:#0f172a; }
+.tp-role{ color:#475569; font-size: 13.5px; }
+.tp-org { color:#7c8797; font-size: 12.5px; }
+
+/* right badge */
+.tp-badge{
+  margin-left:auto;
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#e8f9ed; color:#15803d; border:1px solid #c9efda;
+}
+.tp-badge-college{
+  background:#eef0ff; color:#2a57ff; border-color:#dae1ff;
+}
+
+/* ===== Hover polish (subtle, premium) ===== */
+@media (hover:hover){
+  .tp-card:hover{ transform: translateY(-3px); box-shadow: 0 14px 28px rgba(15,23,42,.1); }
+  .tp-stat-card:hover{ transform: translateY(-2px); box-shadow: 0 12px 26px rgba(15,23,42,.1); }
+}
+
+/* ===== Responsiveness ===== */
+@media (max-width: 992px){
+  .tp-card{ height:auto; }
+}
+@media (max-width: 576px){
+  .tp-pills{ width:100%; justify-content:space-between; }
+  .tp-pill{ flex:1; text-align:center; padding:10px 8px; }
+}
+
+/* ===== Trusted by footer section ===== */
+.tp-trust {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.tp-trust-title {
+  color: #1a1a1a;
+  font-size: clamp(18px, 2.8vw, 22px);
+  margin-bottom: 26px;
+}
+
+.tp-trust-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.tp-trust-item {
+  background: #ffffff;
+  border: 1px solid #e5ecf6;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  padding: 14px 26px;
+  font-weight: 600;
+  color: #1e2a4a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tp-trust-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+}
+
+.tp-trust-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .tp-trust-grid {
+    gap: 16px;
+  }
+
+  .tp-trust-item {
+    padding: 12px 18px;
+    font-size: 14.2px;
+  }
+}

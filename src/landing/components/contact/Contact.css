@@ -1,0 +1,255 @@
+/* =========================================================
+   VS Foundation — Contact Theme
+   Palette: Sunrise (#FF6A00), Peach (#FFC36A), Leaf (#16A34A)
+   ========================================================= */
+
+:root{
+  --sunrise:#FF6A00;
+  --peach:#FFC36A;
+  --leaf:#16A34A;
+  --leaf-dark:#0E7C36;
+  --ink:#0b1324;
+  --paper:#fffdf9;
+}
+
+/* Wrap & subtle background */
+.contact-wrap{
+  position: relative;
+  padding: 80px 0 100px;
+  background:
+    radial-gradient(900px 420px at 70% -8%, rgba(255,195,106,.18), transparent 65%),
+    radial-gradient(700px 360px at 8% -10%, rgba(255,106,0,.12), transparent 60%),
+    #fffaf5;
+}
+
+.c-bg .orb{
+  position:absolute; border-radius:50%; filter:blur(16px); opacity:.45;
+}
+.c-bg .o1{ width:220px;height:220px; right:-60px; top:-40px;
+  background: radial-gradient(circle, rgba(255,138,61,.45), transparent 60%); }
+.c-bg .o2{ width:280px;height:280px; left:-80px; bottom:-80px;
+  background: radial-gradient(circle, rgba(22,163,74,.25), transparent 60%); }
+
+.c-head{ margin-bottom: 26px; }
+.c-title{
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 44px);
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.brand-gradient{
+  background: linear-gradient(90deg, var(--sunrise), #FF8A3D 55%, var(--peach));
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+}
+.c-sub{ color:#556070; max-width:760px; margin:0 auto; }
+
+/* Cards */
+.card{
+  background: linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
+  border: 1px solid rgba(255,106,0,.18);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(79,45,0,.06);
+  padding: 24px;
+}
+
+/* FORM */
+.form-card .field{ margin-bottom: 16px; }
+.form-card label{
+  display:block; font-weight:600; font-size:13px; color:#475569; margin-bottom:8px;
+}
+.form-card input,
+.form-card select,
+.form-card textarea{
+  width:100%; border:1px solid #e8e3dc; background:#fff;
+  border-radius:12px; padding:12px 14px; color:#0f172a; font-size:15px;
+  transition: .2s border-color, .2s box-shadow, .2s background;
+}
+.form-card input::placeholder,
+.form-card textarea::placeholder{ color:#9aa3b2; }
+
+.form-card input:focus,
+.form-card select:focus,
+.form-card textarea:focus{
+  outline:none;
+  border-color: rgba(22,163,74,.55);
+  box-shadow: 0 0 0 4px rgba(22,163,74,.12);
+  background:#fffcf7;
+}
+
+/* Primary Button */
+.btn-brand{
+  appearance:none; border:0; cursor:pointer;
+  background: linear-gradient(90deg, var(--sunrise), #FF8A3D 55%, var(--peach));
+  color:#fff; font-weight:800; letter-spacing:.2px;
+  padding:12px 22px; border-radius:12px; box-shadow:0 12px 26px rgba(255,106,0,.25);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.btn-brand:hover{ transform: translateY(-2px); filter:saturate(1.05);
+  box-shadow:0 16px 32px rgba(255,106,0,.30); }
+.btn-brand:disabled{ opacity:.65; cursor:not-allowed; }
+/* Center the button inside the form */
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
+}
+
+/* Make sure text below stays centered too */
+.reply-note {
+  text-align: center;
+  margin-top: 10px;
+  color: #5f6b7b;
+}
+
+/* INFO CARD */
+.info-card{
+  position:relative; overflow:hidden;
+  border:1px solid rgba(22,163,74,.18);
+}
+.info-card::after{
+  content:""; position:absolute; inset:auto -60px -60px auto;
+  width:200px; height:200px; border-radius:50%;
+  pointer-events:none;
+}
+.info-head h3{ margin:0 0 6px; font-weight:800; color:#0f172a; }
+.info-head p{ color:#667085; margin-bottom:16px; }
+
+.info-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:12px;
+}
+.info-tile{
+  display:flex; flex-direction:column; align-items:flex-start; gap:2px;
+  background:#ffffff; border:1px solid #f2e6d8; border-radius:14px; padding:14px;
+  text-decoration:none; transition:.2s transform,.2s box-shadow,.2s border-color;
+}
+.info-tile:hover{
+  transform: translateY(-3px);
+  border-color:#cdeed7; box-shadow:0 12px 24px rgba(22,163,74,.12);
+}
+.info-tile.no-link:hover{ transform:none; box-shadow:none; border-color:#f2e6d8; }
+
+.it-icon{ font-size:20px; color:var(--sunrise); line-height:1; }
+.it-title{ font-weight:700; color:#0E7C36; }
+.it-sub{ color:#475569; font-size:14px; }
+
+.hours{
+  margin-top:14px; font-size:14px; color:#475569; display:flex; align-items:center; gap:8px;
+}
+.hours .dot{ width:8px; height:8px; border-radius:50%; background:var(--leaf); display:inline-block; }
+
+/* Socials row */
+.social-row{ margin-top: 36px; text-align:center; }
+.socials{ list-style:none; margin:0; padding:0; display:inline-flex; gap:14px; }
+.socials a{
+  width:42px;height:42px; display:grid; place-items:center; border-radius:50%;
+  background:#fff; border:1px solid #f2e6d8; color:#0f172a; transition:.2s;
+}
+.socials a:hover{ color:#0E7C36; border-color:#cdeed7; box-shadow:0 6px 16px rgba(22,163,74,.12); }
+
+/* Utilities */
+.text-center{text-align:center}
+.g-4{ row-gap:24px; }
+.container{ max-width:1140px; margin:0 auto; padding:0 16px; }
+.row{ display:flex; flex-wrap:wrap; margin:0 -12px; }
+.col-lg-7,.col-lg-5,.col-sm-6,.col-lg-12,.col-md-8{ padding:0 12px; }
+.col-lg-7{ flex:0 0 58.333%; max-width:58.333%;}
+.col-lg-5{ flex:0 0 41.667%; max-width:41.667%;}
+.col-sm-6{ flex:0 0 50%; max-width:50%;}
+@media (max-width:991px){ .col-lg-7,.col-lg-5{ flex:0 0 100%; max-width:100%; } }
+@media (max-width:576px){
+  .info-grid{ grid-template-columns:1fr; }
+  .card{ border-radius:14px; padding:18px; }
+}
+
+/* Wrap & subtle background */
+.contact-wrap{
+  position: relative;
+  padding: 80px 0 100px;
+  background:
+    radial-gradient(900px 420px at 70% -8%, rgba(255,195,106,.18), transparent 65%),
+    radial-gradient(700px 360px at 8% -10%, rgba(255,106,0,.12), transparent 60%),
+    #fffaf5;
+  /* prevent decorative elements from causing scrollbars */
+  overflow: hidden;
+}
+
+/* ensure the orb container is clipped to the section */
+.c-bg{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+.c-bg .orb{
+  position:absolute; border-radius:50%; filter:blur(16px); opacity:.45;
+}
+
+/* … keep the rest of your styles above unchanged … */
+
+
+/* --------- IMPORTANT: remove global form centering --------- */
+/* This was making the entire form a centered flex column, which can create width issues */
+.form-card form {
+  display: block;          /* reset */
+}
+
+/* Center the button without breaking the form layout */
+.form-card .btn-brand { 
+  display: inline-flex; 
+  align-self: center;      /* no effect in block form, but harmless */
+}
+.reply-note { 
+  text-align: center; 
+  margin-top: 10px; 
+  color: #5f6b7b; 
+}
+
+/* --------- SCOPE ALL LAYOUT UTILITIES TO THE CONTACT SECTION ONLY --------- */
+.contact-wrap .text-center{ text-align:center }
+.contact-wrap .g-4{ row-gap:24px; }
+
+/* Scope container so it doesn't override site-wide container */
+.contact-wrap .container{
+  max-width:1140px;
+  margin:0 auto;
+  padding:0 16px;
+}
+
+/* Scope row/cols to prevent global Bootstrap overrides */
+.contact-wrap .row{ 
+  display:flex; 
+  flex-wrap:wrap; 
+  margin:0 -12px; 
+}
+.contact-wrap .col-lg-7,
+.contact-wrap .col-lg-5,
+.contact-wrap .col-sm-6,
+.contact-wrap .col-lg-12,
+.contact-wrap .col-md-8{ 
+  padding:0 12px; 
+}
+.contact-wrap .col-lg-7{ flex:0 0 58.333%; max-width:58.333%;}
+.contact-wrap .col-lg-5{ flex:0 0 41.667%; max-width:41.667%;}
+.contact-wrap .col-sm-6{ flex:0 0 50%; max-width:50%;}
+
+/* Socials */
+.contact-wrap .social-row{ margin-top: 36px; text-align:center; }
+.contact-wrap .socials{ list-style:none; margin:0; padding:0; display:inline-flex; gap:14px; }
+.contact-wrap .socials a{
+  width:42px;height:42px; display:grid; place-items:center; border-radius:50%;
+  background:#fff; border:1px solid #f2e6d8; color:#0f172a; transition:.2s;
+}
+.contact-wrap .socials a:hover{
+  color:#0E7C36; border-color:#cdeed7; box-shadow:0 6px 16px rgba(22,163,74,.12);
+}
+
+/* Responsive (scoped) */
+@media (max-width:991px){
+  .contact-wrap .col-lg-7,
+  .contact-wrap .col-lg-5{ flex:0 0 100%; max-width:100%; }
+}
+@media (max-width:576px){
+  .contact-wrap .info-grid{ grid-template-columns:1fr; }
+  .contact-wrap .card{ border-radius:14px; padding:18px; }
+}

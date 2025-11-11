@@ -1,0 +1,181 @@
+/* Section sits ABOVE the fixed background */
+.journey{
+  position: relative;
+  padding: 104px 0 120px;
+  background: transparent;     /* let the balls show through */
+  color: #eaf7f7;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* soft scrim so text stays legible on moving shapes */
+.journey-scrim{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.18)),
+    radial-gradient(900px 500px at 50% 0%, rgba(0,0,0,.18), transparent 60%);
+  z-index: -1;
+}
+
+/* Title + sub */
+.journey-title{
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: .2px;
+  margin: 0 0 10px;
+}
+.jt-gradient{
+  background: linear-gradient(90deg, #ffffff 0%, #dff9f7 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.journey-sub{
+  color: #e1fbfa;
+  max-width: 860px;
+  margin: 0 auto 48px;
+  font-size: clamp(14px, 1.9vw, 16px);
+  line-height: 1.65;
+  opacity: .95;
+}
+
+/* Timeline wrap */
+.jt-wrap{ position:relative; max-width:980px; margin:0 auto; padding:36px 0 72px; }
+
+/* Center line */
+.jt-line{
+  position:absolute; top:24px; bottom:88px; left:50%; transform:translateX(-50%);
+  width:4px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0.7), rgba(255,255,255,0.18));
+  border-radius:3px;
+  box-shadow: 0 0 10px rgba(255,255,255,.25), 0 0 30px rgba(255,255,255,.18);
+}
+
+/* Items */
+.jt-item{ position:relative; width:100%; margin:56px 0; }
+.jt-item.left  .jt-card{ margin-right:auto; }
+.jt-item.right .jt-card{ margin-left:auto; }
+
+/* Cards (glass on teal) */
+.jt-card{
+  position:relative;
+  width:min(720px, 94vw);
+  padding:32px 34px; min-height:160px;
+  border-radius:20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.10));
+  border:1px solid rgba(255,255,255,0.38);
+  backdrop-filter: blur(8px) saturate(160%);
+  box-shadow: 0 14px 36px rgba(0, 45, 45, .28);
+  display:flex; gap:18px; align-items:flex-start;
+  opacity:0; transform:translateY(26px);
+  transition: opacity .55s ease, transform .55s cubic-bezier(.22,.61,.36,1), box-shadow .25s ease, border-color .25s ease;
+}
+.jt-card.in-view{ opacity:1; transform:translateY(0); }
+.jt-card:hover{ border-color: rgba(255,255,255,.55); box-shadow: 0 18px 44px rgba(0,45,45,.34); }
+
+.jt-card::after{
+  content:""; position:absolute; inset:0; border-radius:inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), transparent 60%);
+  opacity:0; transition: opacity .25s ease; pointer-events:none;
+}
+.jt-card:hover::after{ opacity:1; }
+
+/* Icon bubble */
+.jt-item .jt-icon{
+  position:absolute; top:-30px; left:50%; transform:translateX(-50%);
+  width:60px; height:60px; border-radius:50%;
+  display:grid; place-items:center; font-size:28px; color:#0b3b3b;
+  background: radial-gradient(circle at 32% 28%, #f0fffd, #bfeee8 70%);
+  border:3px solid rgba(0,0,0,0.25);
+  box-shadow: 0 8px 18px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.45);
+  z-index:3;
+}
+
+/* Text */
+.jt-h3{ font-weight:800; font-size:clamp(18px, 2.6vw, 22px); color:#ffffff; margin:0; }
+.jt-desc{ color:#f3ffff; font-size:15px; line-height:1.75; margin:8px 0 0; max-width:56ch; }
+
+/* Time pill (right-aligned) */
+.jt-time{
+  margin-left:auto;
+  font-size:12px; padding:7px 12px; border-radius:999px;
+  color:#043a33; background: rgba(255,255,255,.85);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .journey{ padding:92px 0 104px; }
+  .jt-wrap{ padding-bottom:68px; }
+  .jt-line{ top:18px; bottom:76px; }
+  .jt-item{ margin:44px 0; }
+  .jt-card{ width:100%; padding:24px; border-radius:16px; min-height:150px; }
+  .jt-item .jt-icon{ top:-26px; width:54px; height:54px; font-size:24px; }
+  .jt-desc{ max-width:none; }
+}
+@media (max-width:420px){ .jt-item{ margin:38px 0; } }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .jt-card{ transition:none; transform:none; opacity:1; }
+}
+/* Title row: keeps clean baseline even when text wraps */
+.jt-head{
+  display: grid;
+  grid-template-columns: 1fr;   /* title spans full width */
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Premium time pill: fixed position, glass, tiny clock icon */
+.jt-card{
+  position: relative; /* ensure absolute children position to card */
+}
+
+.jt-time{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 2px 8px;
+  min-height: 8px;
+  border-radius: 999px;
+
+  font-weight: 200;
+  font-size: 10.5px;
+  letter-spacing: .2px;
+
+  color: #0a3b34;
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
+  border: 1px solid rgba(255,255,255,.55);
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.12),
+    inset 0 0 0 1px rgba(0,0,0,.06);
+  backdrop-filter: blur(6px) saturate(140%);
+}
+
+/* tiny clock glyph (sharp, no extra markup) */
+.jt-time::before{
+  content:"";
+  width: 14px; height: 14px;
+  background: #0b6b60;
+  opacity: .95;
+  -webkit-mask: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\
+  <circle cx='12' cy='12' r='10'/>\
+  <polyline points='12 6 12 12 16 14'/>\
+  </svg>") center/contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\
+  <circle cx='12' cy='12' r='10'/>\
+  <polyline points='12 6 12 12 16 14'/>\
+  </svg>") center/contain no-repeat;
+}
+
+/* keep spacing tidy when the title wraps on small screens */
+@media (max-width: 768px){
+  .jt-time{ top: 12px; right: 12px; transform: translateZ(0); }
+}
