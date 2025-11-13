@@ -204,3 +204,12 @@
 section[id], [id^="Journey"], [id^="CollegesPage"] {
   scroll-margin-top: var(--nav-h);
 }
+
+.Toastify__toast-container {
+  z-index: 99999 !important;
+  pointer-events: auto;
+}
+
+.Toastify__toast {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}

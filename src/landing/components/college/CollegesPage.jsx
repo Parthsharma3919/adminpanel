@@ -1,6 +1,7 @@
 import React from "react";
 import "./CollegesPage.css";
 import TransformCTA from "./TransformCTA";
+import { Link } from "react-router-dom";
 
 export default function CollegesPage() {
   const leftFeatures = [
@@ -70,12 +71,7 @@ export default function CollegesPage() {
     { value: "24/7", labelTop: "Support", labelBottom: "Dedicated team" },
   ];
 
-  const integrations = [
-    "ERP Systems",
-    "Student Portals",
-    "LMS Platforms",
-    "UGC Portal",
-  ];
+  const integrations = ["ERP Systems", "Student Portals", "LMS Platforms", "UGC Portal"];
 
   return (
     <>
@@ -84,12 +80,11 @@ export default function CollegesPage() {
           <div className="container">
             <div className="text-center mb-4">
               <h2 className="colg-title">
-                For{" "}
-                <span className="text-gradient">Colleges & Institutions</span>
+                For <span className="text-gradient">Colleges & Institutions</span>
               </h2>
               <p className="colg-sub">
-                Streamline UGC-mandated internship programs with our
-                comprehensive management platform.
+                Streamline UGC-mandated internship programs with our comprehensive management
+                platform.
               </p>
             </div>
 
@@ -100,17 +95,11 @@ export default function CollegesPage() {
                 <div className="row g-3">
                   {leftFeatures.map((f, i) => (
                     <div className="col-sm-6" key={i}>
-                      <div
-                        className={`feat-card ${
-                          f.tone === "live" ? "feat-live" : "feat-soon"
-                        }`}
-                      >
+                      <div className={`feat-card ${f.tone === "live" ? "feat-live" : "feat-soon"}`}>
                         <div className="d-flex align-items-center gap-2 mb-2">
                           <div className="feat-icon">{f.icon}</div>
                           <div className="feat-title mb-0">{f.title}</div>
-                          {f.tone === "soon" && (
-                            <span className="chip-soon">Coming Soon</span>
-                          )}
+                          {f.tone === "soon" && <span className="chip-soon">Coming Soon</span>}
                         </div>
                         <p className="feat-desc mb-0">{f.desc}</p>
                       </div>
@@ -132,12 +121,12 @@ export default function CollegesPage() {
                   <div className="cta-box">
                     <h5 className="mb-1">Ready to Partner With Us?</h5>
                     <p className="mb-3">
-                      Join hundreds of colleges already using our platform for
-                      UGC internship management.
+                      Join hundreds of colleges already using our platform for UGC internship
+                      management.
                     </p>
-                    <a className="cta-ghost-btn" href="/partnership">
+                    <Link className="cta-ghost-btn" to="/signup?tab=college">
                       Request College Partnership
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -162,9 +151,8 @@ export default function CollegesPage() {
             <div className="text-center mt-5">
               <h3 className="mb-2">Seamless Integration with Your Systems</h3>
               <p className="colg-sub mb-4">
-                Our platform integrates with popular college management systems
-                and follows UGC guidelines to ensure compliance and smooth
-                operations.
+                Our platform integrates with popular college management systems and follows UGC
+                guidelines to ensure compliance and smooth operations.
               </p>
               <div className="d-flex flex-wrap gap-3 justify-content-center">
                 {integrations.map((tag) => (

@@ -1,5 +1,6 @@
 import React from "react";
 import "./TransformCTA.css";
+import { Link } from "react-router-dom";
 
 export default function TransformCTA() {
   const trustItems = [
@@ -21,15 +22,13 @@ export default function TransformCTA() {
           Ready to Transform Your <span className="text-fade">Internship Program?</span>
         </h2>
         <p className="tcta-sub">
-          Join thousands of students and colleges already using our platform for
-          UGC-mandated internship management and certification.
+          Join thousands of students and colleges already using our platform for UGC-mandated
+          internship management and certification.
         </p>
 
         {/* Trust Panel */}
         <div className="trust-panel">
-          <div className="trust-heading">
-            Trusted by Educational Institutions Across India
-          </div>
+          <div className="trust-heading">Trusted by Educational Institutions Across India</div>
           <div className="trust-grid">
             {trustItems.map((it) => (
               <div key={it.title} className="trust-item">
@@ -41,13 +40,16 @@ export default function TransformCTA() {
         </div>
 
         <div className="tcta-divider" />
-        <p className="tcta-help">
-          Have questions? We’re here to help you get started.
-        </p>
+        <p className="tcta-help">Have questions? We’re here to help you get started.</p>
 
         <div className="btn-row">
-          <a href="#sales" className="btn-ghost">Contact Sales</a>
-          <a href="#demo" className="btn-primary">Request Demo</a>
+          <a href="#sales" className="btn-ghost">
+            Contact Sales
+          </a>
+          {/* <a href="#demo" className="btn-primary">Request Demo</a> */}
+          <Link className="cta-ghost-btn" to="/signup?tab=student">
+            Request Demo
+          </Link>
         </div>
       </div>
     </section>

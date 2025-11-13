@@ -123,9 +123,6 @@ function Configurator() {
       >
         <MDBox>
           <MDTypography variant="h5">Codeमित्र</MDTypography>
-          <MDTypography variant="body2" color="text">
-            See our dashboard options.
-          </MDTypography>
         </MDBox>
 
         <Icon

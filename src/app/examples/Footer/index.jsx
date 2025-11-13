@@ -83,12 +83,12 @@ function Footer({ company, links }) {
 
 // Setting default values for the props of Footer
 Footer.defaultProps = {
-  company: { href: "https://www.codeमित्र.com/", name: "codeमित्र" },
+  company: { href: "https://www.codemitra.com/", name: "codeमित्र" },
   links: [
-    { href: "https://www.codeमित्र.com/", name: "codeमित्र" },
-    { href: "https://www.codeमित्र.com/presentation", name: "About Us" },
-    { href: "https://www.codeमित्र.com/blog", name: "Blog" },
-    { href: "https://www.codeमित्र.com/license", name: "License" },
+    { href: "https://www.codemitra.com/", name: "codeमित्र" },
+    { href: "https://www.codemitra.com/presentation", name: "About Us" },
+    { href: "https://www.codemitra.com/blog", name: "Blog" },
+    { href: "https://www.codemitra.com/license", name: "License" },
   ],
 };
 

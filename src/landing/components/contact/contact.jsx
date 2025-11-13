@@ -217,13 +217,13 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="social-row">
+            {/* <div className="social-row">
               <ul className="socials">
                 <li><a href="/" aria-label="Facebook"><i className="fa fa-facebook" /></a></li>
                 <li><a href="/" aria-label="Twitter"><i className="fa fa-twitter" /></a></li>
                 <li><a href="/" aria-label="YouTube"><i className="fa fa-youtube" /></a></li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </section>
 
